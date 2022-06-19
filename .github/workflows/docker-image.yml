@@ -24,5 +24,5 @@ jobs:
       run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
       
     - name: Push_Image
-      run: docker push ${{$secrets.DOCKER_HUB_USER}}/nginx_web_img
+      run: docker push ${{$secrets.DOCKER_HUB_USER}}/nginx_web_img:0.1
     

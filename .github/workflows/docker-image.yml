@@ -21,8 +21,8 @@ jobs:
       run: |
         docker login -u $DOCKER_USER -P $DOCKER_PASSWORD
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file Dockerfile --tag ${{secrets.DOCKER_HUB_USER}}/nginx_web_img:$(date +%s)
       
     - name: Push_Image
-      run: docker push ${{secrets.DOCKER_HUB_USER}}/nginx_web_img:0.2
+      run: docker push ${{secrets.DOCKER_HUB_USER}}/nginx_web_img:$(date +%s)
     
